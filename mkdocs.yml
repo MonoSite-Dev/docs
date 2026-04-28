@@ -71,7 +71,10 @@ markdown_extensions:
   - attr_list
 
 footer:
-  cr: Copyright &copy; 2023 - 2025 GudupaoSpark
+  cr: TeamMonoSite All rights reserved. Maintained by
+  maintainer:
+    name: Gudupao Spark Inc.
+    url: https://gudupao.top
   links:
     - Common:
         - name: GudupaoSpark
@@ -83,10 +86,10 @@ footer:
           url: https://docs.gudupao.top
   links-zh:
     - 常用链接:
-        - name: GudupaoSpark
-          url: https://gudupao.top
         - name: GitHub
-          url: https://github.com/GudupaoSpark
+          url: https://github.com/MonoSite-Team
+        - name: Gudupao
+          url: https://gudupao.top
     - 其他链接:
-        - name: GudupaoSpark Docs
+        - name: Gudupao Docs
           url: https://docs.gudupao.top

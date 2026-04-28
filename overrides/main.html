@@ -65,7 +65,7 @@
     font-size: 0.8rem;
 }
 .footer-links a:hover {
-    color: var(--md-accent-fg-color);
+    color: var(--footer-link-hover-color, var(--brand-brown));
 }
 .footer-copyright {
     margin-top: 2rem;
@@ -93,7 +93,15 @@
                 </ul>
             </div>
         {% endfor %}
-        <div class="footer-copyright">{{ config.footer.cr }}</div>
+        <div class="footer-copyright">©<span class="footer-year"></span> {{ config.footer.cr }}
+            <a href="{{ config.footer.maintainer.url }}" target="_blank" rel="noopener noreferrer">{{ config.footer.maintainer.name }}</a>
+        </div>
+        <script>
+            (function () {
+                var el = document.querySelector(".footer-year");
+                if (el) el.textContent = new Date().getFullYear();
+            })();
+        </script>
     </div>
 </footer>
 {% endblock %}

@@ -1,7 +1,7 @@
 ---
 template: home.html
 title: Home
-description: GudupaoSpark Docs
+description: A decoupled yet unified full-stack web framework
 buttons: 
   - text: Start
     link: /start

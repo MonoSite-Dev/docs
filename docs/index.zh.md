@@ -1,7 +1,7 @@
 ---
 template: home.html
 title: 主页
-description: GudupaoSpark Docs
+description: 分离式一体化全栈框架
 buttons: 
   - text: 开始
     link: /start

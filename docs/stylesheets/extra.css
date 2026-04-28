@@ -50,6 +50,9 @@
   --hero-btn-outline-bg: #fffefc;
   --hero-btn-outline-fg: var(--brand-brown);
   --hero-btn-outline-border: var(--brand-brown);
+
+  /* 页脚链接悬浮：替代 --md-accent-fg-color（浅色下为近白，浅底不可读） */
+  --footer-link-hover-color: var(--brand-brown);
 }
 
 [data-md-color-scheme="slate"] {
@@ -95,6 +98,9 @@
   --hero-btn-outline-bg: #12171f;
   --hero-btn-outline-fg: #e8eaef;
   --hero-btn-outline-border: rgba(148, 163, 184, 0.55);
+
+  /* 深色页脚底上，悬浮用亮色而非 --md-accent-fg-color（深色字） */
+  --footer-link-hover-color: #fecdd3;
 }
 
 /* 顶栏与标签栏：天蓝底 + 深棕字 */
@@ -258,4 +264,10 @@
 
 [data-md-color-scheme="slate"] .md-button:hover {
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 自定义页脚（overrides/main.html）：链接悬浮对比度 ---------- */
+.footer-container .footer-links a:hover,
+.footer-container .footer-copyright a:hover {
+  color: var(--footer-link-hover-color);
 }
