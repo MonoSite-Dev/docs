@@ -1,0 +1,273 @@
+/*
+ * MonoSite — 协调配色
+ * 顶栏天蓝 | 主色深棕 | 正文白 + 中性灰 | logo 点缀：粉 / 桃 / 浅蓝（仅局部使用）
+ * --brand-sky #B8E4FF | --brand-brown #5D3A3A | --brand-peach #E8A090（装饰）
+ */
+
+[data-md-color-scheme="default"] {
+  color-scheme: light;
+
+  --brand-brown: #5d3a3a;
+  --brand-sky: #b8e4ff;
+  --brand-peach: #e8a090;
+  --brand-pink-accent: #f28b9a;
+
+  /* Brand (home + custom blocks) */
+  --primary-color: var(--brand-peach);
+  --secondary-color: var(--brand-sky);
+  --hero-heading-color: var(--brand-brown);
+  --hero-subtitle-color: #6b7078;
+  --hero-bg: #ffffff;
+  --footer-bg: #ecf4f9;
+
+  /* Material — 与棕 + 天蓝同调 */
+  --md-default-fg-color: #3a2c2a;
+  --md-default-fg-color--light: rgba(58, 44, 42, 0.72);
+  --md-default-fg-color--lighter: rgba(58, 44, 42, 0.52);
+  --md-default-fg-color--lightest: rgba(58, 44, 42, 0.1);
+
+  --md-default-bg-color: #ffffff;
+  --md-code-bg-color: #f3f5f7;
+  --md-code-fg-color: #423532;
+
+  --md-typeset-a-color: #8b4a4a;
+  --md-typeset-color: #3a2c2a;
+
+  --md-accent-fg-color: #fffefc;
+  --md-accent-bg-color: var(--brand-pink-accent);
+
+  --md-primary-fg-color: var(--brand-brown);
+  --md-primary-bg-color: var(--brand-sky);
+  /*
+   * Material（≥60rem）桌面搜索占位符使用该变量着色，语义接近「占位字色」，非背景。
+   * 默认为 #ffffffb3：在浅色搜索框上会几乎隐形，此处改为可读棕灰。
+   */
+  --md-primary-bg-color--light: rgba(93, 58, 58, 0.58);
+
+  /* 首页 Hero 按钮 */
+  --hero-btn-primary-bg: var(--brand-brown);
+  --hero-btn-primary-fg: #fffefc;
+  --hero-btn-outline-bg: #fffefc;
+  --hero-btn-outline-fg: var(--brand-brown);
+  --hero-btn-outline-border: var(--brand-brown);
+
+  /* 页脚链接悬浮：替代 --md-accent-fg-color（浅色下为近白，浅底不可读） */
+  --footer-link-hover-color: var(--brand-brown);
+}
+
+[data-md-color-scheme="slate"] {
+  color-scheme: dark;
+
+  /* 与正文同色相，仅提高一层，避免顶栏「另起一块蓝」 */
+  --brand-brown: #e2e8f0;
+  --brand-sky: #5b7a95;
+  --brand-peach: #e8a090;
+  /* 悬浮按钮：略降亮度，配深色字保证对比 */
+  --brand-pink-accent: #cf6f84;
+
+  --primary-color: var(--brand-peach);
+  --secondary-color: #7eb0d4;
+
+  --hero-heading-color: #f8fafc;
+  --hero-subtitle-color: #9ca3af;
+  /* Hero 与文档区同一深色底，网格才像同一张画布 */
+  --hero-bg: #171a21;
+  --footer-bg: #12151b;
+
+  --md-default-fg-color: #e8eaef;
+  --md-default-fg-color--light: rgba(232, 235, 239, 0.72);
+  --md-default-fg-color--lighter: rgba(226, 230, 235, 0.55);
+  --md-default-fg-color--lightest: rgba(148, 163, 184, 0.16);
+
+  --md-default-bg-color: #171a21;
+  --md-code-bg-color: #1e232e;
+  --md-code-fg-color: #e8eaef;
+
+  --md-typeset-a-color: #f4a8b5;
+  --md-typeset-color: #e8eaef;
+
+  --md-accent-fg-color: #0f141c;
+  --md-accent-bg-color: var(--brand-pink-accent);
+
+  --md-primary-fg-color: #e8eaef;
+  --md-primary-bg-color: #1e2634;
+
+  /* Hero 主按钮：深青灰底 + 近白字（避免浅粉浅蓝底的低对比） */
+  --hero-btn-primary-bg: #2a3f56;
+  --hero-btn-primary-fg: #f8fafc;
+  --hero-btn-outline-bg: #12171f;
+  --hero-btn-outline-fg: #e8eaef;
+  --hero-btn-outline-border: rgba(148, 163, 184, 0.55);
+
+  /* 深色页脚底上，悬浮用亮色而非 --md-accent-fg-color（深色字） */
+  --footer-link-hover-color: #fecdd3;
+}
+
+/* 顶栏与标签栏：天蓝底 + 深棕字 */
+[data-md-color-scheme="default"] .md-header,
+[data-md-color-scheme="default"] .md-tabs {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+  box-shadow: 0 4px 24px rgba(93, 46, 46, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-tabs {
+  border-bottom: 1px solid rgba(93, 46, 46, 0.12);
+}
+
+[data-md-color-scheme="slate"] .md-header,
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: var(--md-primary-bg-color);
+  color: var(--md-primary-fg-color);
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  border-bottom: 1px solid rgba(255, 176, 184, 0.12);
+}
+
+/* 浅色顶栏搜索：与浅蓝天顶栏 + 结果区一体，避免「上深下浅」割裂 */
+[data-md-color-scheme="default"] .md-search__form {
+  background-color: rgba(255, 255, 255, 0.92);
+  color: var(--md-primary-fg-color);
+  border-radius: 0.35rem;
+  border: 1px solid rgba(93, 58, 58, 0.12);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.85), 0 1px 2px rgba(45, 62, 82, 0.06);
+}
+
+[data-md-color-scheme="default"] .md-search__input {
+  background-color: transparent;
+  border-radius: 0.35rem;
+  color: var(--brand-brown, #5d3a3a) !important;
+  -webkit-text-fill-color: var(--brand-brown, #5d3a3a);
+}
+
+[data-md-color-scheme="default"] .md-search__input::placeholder {
+  color: rgba(93, 58, 58, 0.55) !important;
+  -webkit-text-fill-color: rgba(93, 58, 58, 0.55);
+  opacity: 1 !important;
+}
+
+[data-md-color-scheme="default"] .md-search__icon,
+[data-md-color-scheme="default"] .md-search__input + .md-search__icon {
+  color: rgba(93, 58, 58, 0.65) !important;
+}
+
+[data-md-color-scheme="default"] .md-search__form:hover {
+  background-color: #ffffff;
+  border-color: rgba(93, 58, 58, 0.18);
+}
+
+[data-md-color-scheme="default"] .md-search__form:focus-within {
+  background-color: #ffffff;
+  border-color: rgba(93, 58, 58, 0.22);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.95), 0 0 0 2px rgba(93, 58, 58, 0.06);
+}
+
+[data-md-color-scheme="default"] .md-search__input:hover,
+[data-md-color-scheme="default"] .md-search__input:focus {
+  background-color: transparent;
+}
+
+[data-md-color-scheme="default"] .md-search__options .md-search__icon {
+  color: rgba(93, 58, 58, 0.65) !important;
+}
+
+/* 展开后结果区与输入条同色相 */
+[data-md-color-scheme="default"] .md-search__inner {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+[data-md-color-scheme="default"] .md-search__output {
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+[data-md-color-scheme="default"] .md-search__scrollwrap {
+  background-color: rgba(255, 255, 255, 0.96);
+}
+
+[data-md-color-scheme="default"] .md-search-result__meta {
+  color: var(--md-default-fg-color) !important;
+  opacity: 1 !important;
+  background-color: rgba(248, 250, 251, 0.96);
+  border-top: 1px solid rgba(93, 58, 58, 0.1);
+}
+
+[data-md-color-scheme="default"] .md-search-result .md-typeset {
+  opacity: 1 !important;
+  color: var(--md-typeset-color);
+}
+
+
+/* ---------- 深色模式：首页与顶栏补强 ---------- */
+[data-md-color-scheme="slate"] .md-tabs {
+  border-bottom-color: rgba(148, 163, 184, 0.15);
+}
+
+[data-md-color-scheme="slate"] .md-search__form,
+[data-md-color-scheme="slate"] .md-search__input {
+  background-color: rgba(30, 38, 50, 0.9);
+  color: #f1f5f9;
+  border-radius: 0.2rem;
+}
+
+[data-md-color-scheme="slate"] .md-search__input::placeholder {
+  color: rgba(241, 245, 249, 0.65);
+}
+
+[data-md-color-scheme="slate"] .md-search__icon {
+  color: rgba(241, 245, 249, 0.85);
+}
+
+[data-md-color-scheme="slate"] .md-search__input:hover,
+[data-md-color-scheme="slate"] .md-search__input:focus {
+  background-color: rgba(24, 32, 44, 0.98);
+}
+
+/* Hero 网格：深色底上用冷灰线 */
+[data-md-color-scheme="slate"] .mdx-container::before {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="%2394a3b8" stroke-opacity="0.28" stroke-width="1"/></svg>');
+  opacity: 0.45;
+}
+
+[data-md-color-scheme="slate"] .mdx-hero h1 {
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.45);
+}
+
+[data-md-color-scheme="slate"] .hero-logo {
+  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.4));
+}
+
+/* 盖过 Material 对 .md-button 的配色，保证 Hero 按钮对比度 */
+[data-md-color-scheme="slate"] .mdx-container .mdx-hero__content a.md-button--primary {
+  background-color: var(--hero-btn-primary-bg) !important;
+  color: var(--hero-btn-primary-fg) !important;
+  border-color: var(--hero-btn-primary-bg) !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-container .mdx-hero__content a.md-button--default {
+  background-color: var(--hero-btn-outline-bg) !important;
+  color: var(--hero-btn-outline-fg) !important;
+  border-color: var(--hero-btn-outline-border) !important;
+}
+
+[data-md-color-scheme="slate"] .mdx-container .mdx-hero__content a.md-button--primary:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.45);
+  filter: brightness(1.08);
+}
+
+[data-md-color-scheme="slate"] .mdx-container .mdx-hero__content a.md-button--default:hover {
+  background-color: rgba(148, 163, 184, 0.12) !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+}
+
+[data-md-color-scheme="slate"] .md-button:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 自定义页脚（overrides/main.html）：链接悬浮对比度 ---------- */
+.footer-container .footer-links a:hover,
+.footer-container .footer-copyright a:hover {
+  color: var(--footer-link-hover-color);
+}
